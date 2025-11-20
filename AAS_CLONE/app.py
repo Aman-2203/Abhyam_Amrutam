@@ -124,23 +124,35 @@ def process_document_background(job_id, mode, input_path, language, source_lang,
         }
 
 
-@app.route("/")
+@app.get("/")
 def initialize():
     return render_template('feature.html')
 
-@app.route('/features')
+@app.get('/features')
 def feature():
     return render_template('feature.html')
 
-@app.route('/pricing')
+@app.get('/login')
+def login():
+    return render_template('login.html')
+
+@app.get('/register')
+def register():
+    return render_template('register.html')
+
+@app.get('/pricing')
 def pricing():
     return render_template('pricing.html')
 
-@app.route('/contactus')
+@app.get('/contactus')
 def contactus():
     return render_template('contactus.html')
 
-@app.route('/tool')
+@app.get('/upload_document')
+def upload_document():
+    return render_template('upload_document.html')
+
+@app.get('/tool')
 def index_redirect():
     return render_template('index.html')
 
